@@ -32,10 +32,10 @@ struct circleButton: View {
     // Define variables to control button
     @State var circleTapped = false
     @State var circlePressed = false
-    
+
     var body: some View {
         ZStack{
-            Image(systemName: "flame")
+            Image(systemName: "circle")
                 .font(.system(size: 40, weight: .light))
                 .offset(x: circlePressed ? -90 : 0, y: circlePressed ? -90 : 0)
                 .rotation3DEffect(Angle(degrees: circlePressed ? 20 : 0), axis: (x: 10, y: -10, z: 0))
