@@ -41,15 +41,14 @@ struct circleButton: View {
                 .rotation3DEffect(Angle(degrees: circlePressed ? 20 : 0), axis: (x: 10, y: -10, z: 0))
         }
         .frame(width: 60, height: 60)
-        .background[
+        .background (
             ZStack{
                 Circle()
                     .fill(Color("Background"))
                     .frame(width: 100, height: 100) // Button size
-                    .shadow(Color("LightShadow"), radius: 8, x: -8, y: -8)
-                    .shadow(Color("DarkShadow"), radius: 8, x: 8, y: 8)
-
+                    .shadow(color: Color("LightShadow"), radius: 8, x: -8, y: -8)
+                    .shadow(color: Color("DarkShadow"), radius: 8, x: 8, y: 8)
             }
-        ]
+        )
     }
 }
