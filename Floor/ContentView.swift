@@ -50,5 +50,13 @@ struct circleButton: View {
                     .shadow(color: Color("DarkShadow"), radius: 8, x: 8, y: 8)
             }
         )
+        .scaleEffect(circleTapped ? 1.2 : 1)
+        .onTapGesture(count: 1) {
+            self.circleTapped.toggle()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.circleTapped = false
+            }
+        }
+
     }
 }
