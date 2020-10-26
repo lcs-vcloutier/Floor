@@ -26,8 +26,20 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 struct circleButton: View {
+    
+    // Define variables to control button
+    @State var circleTapped = false
+    @State var circlePressed = false
+    
     var body: some View {
-        Text("...").font(.largeTitle).bold()
+        ZStack{
+            Image(systemName: "flame")
+                .font(.system(size: 40, weight: .light))
+                .offset(x: circlePressed ? -90 : 0, y: circlePressed ? -90 : 0)
+                .rotation3DEffect(Angle(degrees: circlePressed ? 20 : 0), axis: (x: 10, y: -10, z: 0))
+        }
+        .frame(width: 60, height: 60)
     }
 }
